@@ -26,8 +26,10 @@ func CreateTableUser(session *gocql.Session, keyspace string) {
     CREATE TABLE IF NOT EXISTS %s.Theatre (
         TheatreId UUID PRIMARY KEY,
         TotalSeats INT,
-        Slots LIST<TIMESTAMP>,
-        Rating DOUBLE
+		TheatreName TEXT,
+        SlotTiming LIST<Text>,
+        Rating DOUBLE,
+		TheatreOwnerId TEXT
     )`, keyspace)
 
 	if err := session.Query(createTheatreQuery).Exec(); err != nil {
@@ -43,12 +45,13 @@ func CreateTableShow(session *gocql.Session, keyspace string){
     CREATE TABLE IF NOT EXISTS %s.Show (
         ShowId TEXT PRIMARY KEY,
 		Moviename TEXT,
-        ShowTime TIMESTAMP,
+        ShowTiming TEXT,
         TheatreId TEXT,
-        ShowDate TIMESTAMP,
+        DateOfShow TEXT,
         ReservedSeats INT,
         Availability BOOLEAN,
-        TotalSeats SET<FROZEN<MAP<INT, INT>>>
+        SeatInTotal SET  frozen<list<frozen<list<boolean>>>>,
+		Price INT
 		
     )
 `, keyspace)
@@ -86,10 +89,11 @@ func CreateTableBooking(session *gocql.Session, keyspace string){
 			BookingId TEXT primary key,
 			ShowId TEXT,
 			RequiredSeats int,
-			ShowTime TIMESTAMP,
-			ShowDate TIMESTAMP,
-			Availability boolean,
-			totalAmount int
+			ShowTiming TEXT,
+			DateOfShow TEXT,
+			totalAmount int,
+			SeatPositions  frozen<list<frozen<list<boolean>>>>,
+			UserId TEXT
 		
         )
     `, keyspace)

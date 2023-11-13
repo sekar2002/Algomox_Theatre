@@ -34,8 +34,6 @@ func Booking(session *gocql.Session, c *gin.Context){
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
-	_,err=database.SendConfirmation(session,booking.UserId,bookingId)
-	fmt.Println(err)
 	c.JSON(http.StatusOK, gin.H{"Response": bookingId})
 	
 }
