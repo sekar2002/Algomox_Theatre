@@ -1,0 +1,639 @@
+{
+	"info": {
+		"_postman_id": "1c0a2503-9dd1-46d8-913e-93505a7a9534",
+		"name": "Theatre",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23879840",
+		"_collection_link": "https://warped-comet-872395.postman.co/workspace/Theatre~549ca3f9-bede-45ff-8c8d-bd16fd928bac/collection/23879840-1c0a2503-9dd1-46d8-913e-93505a7a9534?action=share&source=collection_link&creator=23879840"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "MailId",
+							"value": "nishanth.20cse@kongu.edu",
+							"type": "text"
+						},
+						{
+							"key": "Password",
+							"value": "gggsss",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/users/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"users",
+						"login"
+					]
+				},
+				"description": "    Login"
+			},
+			"response": []
+		},
+		{
+			"name": "SignUp TheatreOwner",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n     \"Username\":\"yusvanth\",\r\n    \"MailId\":\"yusvanth.20cse@kongu.edu\",\r\n    \"Password\":\"gggsss\",\r\n    \"Location\":\"Salem\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/theatreowner/signup",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"theatreowner",
+						"signup"
+					]
+				},
+				"description": "TheatreOwnerDescription"
+			},
+			"response": []
+		},
+		{
+			"name": "User SignUp",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Username\":\"nishanth\",\r\n    \"MailId\":\"nishanth.20cse@kongu.edu\",\r\n    \"Password\":\"gggsss\",\r\n    \"Location\":\"Salem\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/users/signup",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"users",
+						"signup"
+					]
+				},
+				"description": "Users SignUp"
+			},
+			"response": []
+		},
+		{
+			"name": "Add Theatres",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "jwt",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InZpZGh1YS4yMGNzZUBrb25ndS5lZHUiLCJleHAiOjE2OTk3MjAzNzF9.DB8aQDBFm8w4ilvdxlOo0-GlkR2Wz9KyhoKbdXdKhtQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \r\n    \"TheatreName\":\"cosmos\",\r\n    \"TotalSeats\":250,\r\n    \"SlotTiming\":[\"15:30:00\", \"18:00:00\"],\r\n    \"Rating\":0.0,\r\n    \"TheatreId\":\"0\",\r\n    \r\n     \"TheatreOwnerId\":\"vidhua.20cse@kongu.edu\"\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/theatreowner/addtheatres",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"theatreowner",
+						"addtheatres"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllTheatres",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "jwt",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InZpZGh1YS4yMGNzZUBrb25ndS5lZHUiLCJleHAiOjE2OTk3MjAzNzF9.DB8aQDBFm8w4ilvdxlOo0-GlkR2Wz9KyhoKbdXdKhtQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8000/theatreowner/getalltheatres",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"theatreowner",
+						"getalltheatres"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetTheatreDetails",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "jwt",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InZpZGh1YS4yMGNzZUBrb25ndS5lZHUiLCJleHAiOjE2OTk3MjAzNzF9.DB8aQDBFm8w4ilvdxlOo0-GlkR2Wz9KyhoKbdXdKhtQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "TheatreId",
+							"value": "d4decc42-92d8-4f20-9651-4a6014785daa",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/theatreowner/gettheatrebyid",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"theatreowner",
+						"gettheatrebyid"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddShows",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "jwt",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InZpbWFsa3VtYXJzLjIwY3NlQGtvbmd1LmVkdSIsImV4cCI6MTY5OTc5NTAyNn0.4DsbG8gSW_0RjpdrFDaNoovu70-XQ3rctgAB__bgcMo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"MovieName\":\"IRUGAPATRU\",\r\n    \"ShowTiming\":\"10.00PM\",\r\n    \"TheatreId\":\"83ff8946-52e8-4b40-b01e-39e77ee1f7df\",\r\n    \"DateOfShow\":\"01-01-2022\",\r\n    \"Availability\":true,\r\n    \"ReservedSeats\":0,\r\n    \"SeatInTotal\":[[true,true,true,true,true,true,true,true ],\r\n                    [true,true,true,true,true,true,true,true ],\r\n                    [true,true,true,true,true,true,true,true ],\r\n                    [true,true,true,true,true,true,true,true ],\r\n                    [true,true,true,true,true,true,true,true ]]\r\n    \r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/theatreowner/theatre/addshows",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"theatreowner",
+						"theatre",
+						"addshows"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteTheatre",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "jwt",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InZpZGh1YS4yMGNzZUBrb25ndS5lZHUiLCJleHAiOjE2OTk3MjAzNzF9.DB8aQDBFm8w4ilvdxlOo0-GlkR2Wz9KyhoKbdXdKhtQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "TheatreId",
+							"value": "74e90984-d821-4c59-b21a-0ef6d361a654",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/theatreowner/deletetheatre",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"theatreowner",
+						"deletetheatre"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EditTheatreDetail",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "jwt",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InZpZGh1YS4yMGNzZUBrb25ndS5lZHUiLCJleHAiOjE2OTk3MjAzNzF9.DB8aQDBFm8w4ilvdxlOo0-GlkR2Wz9KyhoKbdXdKhtQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \r\n    \"TheatreName\":\"cosmos\",\r\n    \"TotalSeats\":250,\r\n    \"SlotTiming\":[\"15:30:00\", \"18:00:00\"],\r\n    \"Rating\":0.0,\r\n    \"TheatreId\":\"d92f1b70-ae1c-471b-829a-42a6915f0a73\",\r\n     \"TheatreOwnerId\":\"vidhua.20cse@kongu.edu\"\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/theatreowner/edittheatre",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"theatreowner",
+						"edittheatre"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DisplayAllShows",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "jwt",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InZpZGh1YS4yMGNzZUBrb25ndS5lZHUiLCJleHAiOjE2OTk3MzY0MzV9.LWvCdafm6NGpZMmWX361fSlp2IcSvbZmrVWUyh8lrvE",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "TheatreId",
+							"value": "ffe56f2a-c26a-484d-a353-efd3195c85c2",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/theatreowner/theatre/getallshows",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"theatreowner",
+						"theatre",
+						"getallshows"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetShowDetails",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "jwt",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InZpZGh1YS4yMGNzZUBrb25ndS5lZHUiLCJleHAiOjE2OTk3MjY5MzF9.NS641aGMpJnkL1UFJOeNL_WddIypKRbO8Uu1lxyYg1c",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "ShowId",
+							"value": "644f53f4-0f14-45f8-9a20-5243f4f63d18",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/theatreowner/theatre/getshowbyid",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"theatreowner",
+						"theatre",
+						"getshowbyid"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteShow",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "jwt",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InZpZGh1YS4yMGNzZUBrb25ndS5lZHUiLCJleHAiOjE2OTk3MzIxMTd9.PzGQGvNdhJF7gasY9ld_UfL34ZrzNV72PkVJe1qoc_k",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "ShowId",
+							"value": "474af2a9-1dff-47a6-9e96-cede5d4f3431",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/theatreowner/theatre/deleteshow",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"theatreowner",
+						"theatre",
+						"deleteshow"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EditShowDetails",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "jwt",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InZpZGh1YS4yMGNzZUBrb25ndS5lZHUiLCJleHAiOjE2OTk3Mjc0ODN9.gf3gD7HTVEDf0i8-dwAdQv-hU87HxY8ivot3DZ5bqX8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n            \"Moviename\": \"IRUGAPATRU\",\r\n            \"ShowTiming\": \"10.00PM\",\r\n            \"TheatreId\": \"ffe56f2a-c26a-484d-a353-efd3195c85c2\",\r\n            \"DateOfShow\": \"01-01-2022\",\r\n            \"ReservedSeats\": 0,\r\n            \"Availability\": true,\r\n            \"SeatInTotal\": [\r\n                [\r\n                    true,\r\n                    true,\r\n                    true,\r\n                    true,\r\n                    true,\r\n                    true,\r\n                    true,\r\n                    true\r\n                ],\r\n                [\r\n                    true,\r\n                    true,\r\n                    true,\r\n                    true,\r\n                    true,\r\n                    true,\r\n                    true,\r\n                    true\r\n                ],\r\n                [\r\n                    true,\r\n                    true,\r\n                    true,\r\n                    true,\r\n                    true,\r\n                    true,\r\n                    true,\r\n                    true\r\n                ],\r\n                [\r\n                    true,\r\n                    true,\r\n                    true,\r\n                    true,\r\n                    true,\r\n                    true,\r\n                    true,\r\n                    true\r\n                ],\r\n                [\r\n                    true,\r\n                    true,\r\n                    true,\r\n                    true,\r\n                    true,\r\n                    true,\r\n                    true,\r\n                    true\r\n                ]\r\n            ],\r\n            \"ShowId\": \"057508f1-1d16-438c-a48d-829ad194038f\"\r\n        }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/theatreowner/theatre/editshow",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"theatreowner",
+						"theatre",
+						"editshow"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DisplayAllAvailableShows",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "jwt",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pc2hhbnRoLjIwY3NlQGtvbmd1LmVkdSIsImV4cCI6MTY5OTczNzU3Nn0.lTSOYfBrzAw_S5s0bOv59aCh4FgloLqbOaLKl4P7yYQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8000/users/getallavailableshows",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"users",
+						"getallavailableshows"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "jwt",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pc2hhbnRoLjIwY3NlQGtvbmd1LmVkdSIsImV4cCI6MTY5OTcyOTkyMX0.FjKllnGcTOo2YpzxjmNboqPefYoCwUHzQuLZixxU9Ec",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "MovieName",
+							"value": "Leo",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/users/searchmoviebyname",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"users",
+						"searchmoviebyname"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Booking",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "jwt",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5pc2hhbnRoLjIwY3NlQGtvbmd1LmVkdSIsImV4cCI6MTY5OTczNTkxOH0.vpi0vHdUyzfueRJnD7jmOod4fkBDf3ldIsm1a3jtSic",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ShowID\":\"e77f5c65-b1df-4d2d-bd7c-7578b42dbd4c\",\r\n    \"RequiredSeats\":5,\r\n    \"ShowTiming\":\"10.00pm\",\r\n    \"DateOfShow\":\"11.11.23\",\r\n    \"TotalAmount\":0,\r\n    \"SeatPositions\":[[true,true,true,false,false,true,true,true ],\r\n                    [true,true,false,false,false,true,true,true ],\r\n                    [true,true,true,true,true,true,true,true ],\r\n                    [true,true,true,true,true,true,true,true ],\r\n                    [true,true,true,true,true,true,true,true ]],\r\n    \"UserId\":\"\",\r\n    \"BookingId\":\"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/users/booking",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"users",
+						"booking"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "WriteReviews",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "jwt",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8000/users/review",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"users",
+						"review"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DisplayReviews",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "jwt",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InZpbWFsa3VtYXJzLjIwY3NlQGtvbmd1LmVkdSIsImV4cCI6MTY5OTgwMjQ4MH0.oM9Hl9JhxTrIK1pg9DljDSTKLUqPiUToghXYpHBJ05s",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "TheatreId",
+							"value": "09eaa257-3459-4216-b381-e2c5143aa136",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/users/getallreview",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"users",
+						"getallreview"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PreviousBooking",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "jwt",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNvd21peWFhLjIwY3NlQGtvbmd1LmVkdSIsImV4cCI6MTY5OTgwODUzNX0.HGBOyDy_r6C1kj2IvN1FM_G1Qeyi5sDN6ZFix7UTyhU",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8000/users/getpreviousbookings",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"users",
+						"getpreviousbookings"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
